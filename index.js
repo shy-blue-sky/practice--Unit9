@@ -5,7 +5,18 @@
  * Use recursion!
  */
 
-function repeater(char, n = 5) {}
+// function repeater(char, n = 5) {
+//     //base case
+//     if (n === 1)  return char;
+//     //recursive case
+//     return char + repeater(char, n - 1);    
+//     // R0: repeater("g", n=5) --> 
+//     // R1: 'gg', n=4
+//     // R2: repeater('gg', n=4) --> "ggg", n=3
+//     // R3: repeater("ggg", n=3) --> "gggg", n=2
+//     // R4: repeaster("gggg" , n=2) --> "ggggg", n=1
+//     // R5: "ggggg"
+// }
 
 // To check if you've completed the challenge, uncomment these console.logs!
 // console.log(repeater('g')); // -> 'ggggg'
@@ -18,7 +29,13 @@ function repeater(char, n = 5) {}
  * Assume input will be a positive integer. Use recursion!
  */
 
-function isEven(n) {}
+// function isEven(n) {
+//     //base case
+//     if (n === 1) return false;
+//     if (n === 0) return true;
+//     //recursive
+//     return isEven(n - 2);
+// }
 
 // console.log(isEven(0)); // -> true
 // console.log(isEven(5)); // -> false
@@ -36,9 +53,14 @@ function isEven(n) {}
  * Ex: factorial(5) = 5 * 4 * 3 * 2 * 1
  */
 
-function factorial(num) {}
+// function factorial(num) {
+//     //base case
+//     if (num === 0) return 1;
+//     //recursion
+//     return factorial(num - 1) *num;
+// }
 
-// To check if you've completed the challenge, uncomment these console.logs!
+// // To check if you've completed the challenge, uncomment these console.logs!
 // console.log(factorial(4)); // -> 24
 // console.log(factorial(6)); // -> 720
 // console.log(factorial(0)); // -> 1
@@ -53,7 +75,19 @@ function factorial(num) {}
  * greater than array.length - 1?
  */
 
-function getLength(array, i = 0) {}
+
+// function getLength(array, i = 0) {
+//   if (array[0] === undefined ) return i;
+// //   // recursive case
+//   return getLength(array.slice(1), i + 1);  
+// } 
+//   // R1: [1,2,3,4,5] --> [2,3,4,5] --> i = 1
+//   // R2: [2,3,4,5] --> [3,4,5] --> i = 2
+//   // R3: [3,4,5] --> [4,5] --> i = 3
+//   // R4: [4,5] --> [5] --> i = 4
+//   // R5: [5] --> [] --> i = 5
+//   // output: 5
+
 
 // console.log(getLength([1])); // -> 1
 // console.log(getLength([1, 2])); // -> 2
@@ -67,7 +101,23 @@ function getLength(array, i = 0) {}
  * Ex: pow(5, 3) = 5 * 5 * 5
  */
 
-function pow(base, exponent) {}
+// function pow(base, exponent) {
+//     //base case 
+//     if (exponent === 0)
+//       return 1;
+//     if (base === 0)
+//       return 0;
+//     if (exponent === 1)
+//       return base;
+//     //recursion
+//     return base * pow(base, exponent - 1);
+// }
+
+// //R1: 2 * pow(base, 4 - 1 = 3) <===> base * pow(base, exponent - 1); ===> 16
+// //R2: 2 * pow(2, 3 - 1 = 2)     <===> base * pow(base, exponent - 1); ===> 2 * 4 
+// //R3: 2 * pow(2, 2 - 1 = 1) <===> base * pow(base, exponent - 1);  ===>  2 * 2 = 4
+// //R4: exponent === 1 --> return base = 2
+
 
 // console.log(pow(2, 4)); // -> 16
 // console.log(pow(3, 5)); // -> 243
@@ -79,7 +129,32 @@ function pow(base, exponent) {}
  * as an input and logs every number from n (inclusive) to 0 (exclusive) to the console.
  */
 
-function countdown(n) {}
+// function countdown(n) {
+//     //base case
+//     if (n === 1)
+//     return n;
+//     //recursion
+//     return countdown(n - 1);
+//     // R0: n = 3;
+//     // R1: countdown(3-1 = 2) ===> 
+//     // R2: countdown(2-1 =1) ===> n=1
+//   }
+
+
+
+// function countdown(n) {
+//     //base case 
+//     if (n === 0) return n;
+//     console.log(n);
+//     return countdown(n-1);
+//     //R0 -> n=5
+//     //R1: 5 / n-1=4
+//     //R2: 4 / 4-1=3
+//     //R3: 3 / 3-1=2
+//     //R4: 2 / 2-1=1
+//     //R5: 1 / 1-1=0
+//     //R6: 0
+// }
 
 // countdown(5);
 // countdown(10);
@@ -90,7 +165,17 @@ function countdown(n) {}
  * Write a recursive function sum that calculates the sum of an array of integers.
  */
 
-function sum(array) {}
+// function sum(array) {
+//     // base case
+//     if (array.length === 0) return 0;
+//     // recursion
+//     return array[0] + sum(array.slice(1));
+    
+// }
+// // R1: [1,1,1] --> 1 + sum(array.slice(1)) = 2 + 1 = 3
+// // R2: [1,1] --> 1 + sum(array.slice(1)) = 1 + 1 = 2
+// // R3: [1] --> 1 + sum(array.slice(1)) = 1 + 0 = 1
+// // R4: return 0 
 
 // console.log(sum([1, 1, 1])); // -> returns 3
 // console.log(sum([1, 2, 3, 4, 5, 6])); // -> returns 21
@@ -132,7 +217,19 @@ function isPrime(num) {}
  * function in funcArray, in order. Use recursion!
  */
 
-function flow(input, funcArray, i = 0) {}
+// function flow(input, funcArray, i = 0) {
+//     // base case
+//     if (i === funcArray.length ) return input;
+//     // recursion
+//       input = funcArray[0](input); 
+//       return flow(input, funcArray.slice(1), i);
+// }
+
+// // R1: funcArray.length = 4 --> multiplyBy2(2) = 4 + flow(input, funcArray.slice(1), i)
+// // R2: funcArray.length = 3 --> add7(4) = 11 + flow(input, funcArray.slice(1), i)
+// // R3: funcArray.length = 2 --> modulo4(11) = 3 + flow(input, funcArray.slice(1), i)
+// // R4: funcArray.length = 1 --> subtract10(3) = -7 + flow(input, funcArray.slice(1), i)
+// // R5: funcArray.length = 0 --> return the input = -7
 
 // function multiplyBy2(num) {
 //   return num * 2;
@@ -157,7 +254,18 @@ function flow(input, funcArray, i = 0) {}
  * Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, ...
  */
 
-function fib(n) {}
+// function fib(n) {
+//     //base case
+//     if (n === 0) return 0;
+//     if (n === 1) return 1;
+//     //recursive
+//     return fib(n - 1) + fib(n - 2);
+// }
+// // R0: 4
+// // R1: fib(4-1) + fib(4-2) == fib(3)+fib(2) --> 2+1 ==> fib(4) = 3
+// // R2: fib(3-1) + fib(3-2) == fib(2)+fib(1) ---> 1+1 ==> fib(3) = 2
+// // R3: fib(2-1) + fib(2-2) == fib(1)+fib(0) ---> 1+0 ==> fib(2) = 1
+// // R4: 1+0
 
 // console.log(fib(0)); // -> 0
 // console.log(fib(1)); // -> 1
